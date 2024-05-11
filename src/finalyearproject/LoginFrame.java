@@ -1,6 +1,4 @@
 package finalyearproject;
-
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.BufferedReader;
@@ -8,7 +6,6 @@ import java.io.FileReader;
 
 public class LoginFrame extends JFrame {
     private JTextField usernameField;
-    private JPasswordField passwordField;
 
     public LoginFrame() {
         initComponents();
@@ -17,7 +14,6 @@ public class LoginFrame extends JFrame {
     private void initComponents() {
         // Initialize components
         usernameField = new JTextField(20);
-        passwordField = new JPasswordField(20);
         JButton loginButton = new JButton("Login");
 
         // Set layout

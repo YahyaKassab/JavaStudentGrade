@@ -1,4 +1,5 @@
-package finalyearproject;import javax.swing.*;
+package finalyearproject;
+import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -15,32 +16,25 @@ public class GradeDisplayFrame extends JFrame {
         String[] rows = grades.split("\\n");
 
         // Define column names
-        String[] columnNames = {"Name", "Score", "Grade", "Status"}; // Add "Status" column
+        String[] columnNames = {"Name", "Score", "Grade"};
 
         // Create a two-dimensional array to hold the data
-        String[][] data = new String[rows.length][4];
+        String[][] data = new String[rows.length][3];
 
         // Populate the data array
         for (int i = 0; i < rows.length; i++) {
             String[] parts = rows[i].split("\\s+");
             data[i][0] = parts[0]; // Name
-            data[i][1] = parts[1] + "%"; // Score
+            data[i][1] = parts[1]; // Score
             data[i][2] = parts[2]; // Grade
-            String status = null;
-            if(Integer.parseInt(parts[1]) >= 50){
-                status = "Congrats";
-            }else{
-                status = "Try Again";
-
-            }
-            data[i][3] = status; //a button oppe; // Status based on score
         }
-        
+
         // Create a table model with the data and column names
         DefaultTableModel model = new DefaultTableModel(data, columnNames);
 
         // Create a table with the model
         gradesTable = new JTable(model);
+
 
         // Set cell renderer to customize appearance
         DefaultTableCellRenderer renderer = new DefaultTableCellRenderer(){
@@ -79,7 +73,7 @@ public class GradeDisplayFrame extends JFrame {
         // Set frame properties
         setTitle("Grades Display");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setSize(900, 500);
+        setSize(600, 300);
         setLocationRelativeTo(null); // Center the frame
         setVisible(true);
     }
