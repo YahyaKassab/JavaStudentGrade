@@ -1,10 +1,14 @@
 package finalyearproject;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
 public class LoginFrame extends JFrame {
+
     private JTextField usernameField;
 
     public LoginFrame() {
@@ -14,7 +18,9 @@ public class LoginFrame extends JFrame {
     private void initComponents() {
         // Initialize components
         usernameField = new JTextField(20);
+        
         JButton loginButton = new JButton("Login");
+        JButton signupButton = new JButton("Signup");
 
         // Set layout
         setLayout(new FlowLayout());
@@ -22,12 +28,21 @@ public class LoginFrame extends JFrame {
         // Add components
         add(new JLabel("Name:"));
         add(usernameField);
+        add(Box.createHorizontalStrut(100)); // Add some horizontal space
         add(loginButton);
+        add(Box.createHorizontalStrut(100));
+        add(Box.createVerticalStrut(150)); // Add some vertical space
+        // Add Wanna Signup text with some spacing
+        JLabel signupLabel = new JLabel("Wanna Signup?");
+        add(signupLabel);
+        add(Box.createVerticalStrut(10)); // Add some vertical space
+
+        add(signupButton);
 
         // Set frame properties
         setTitle("Login");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 150);
+        setSize(300, 200); // Adjust height to accommodate signup section
         setLocationRelativeTo(null); // Center the frame
         setVisible(true);
 
@@ -36,6 +51,16 @@ public class LoginFrame extends JFrame {
 
         // Add action listener for login button
         loginButton.addActionListener(e -> login());
+
+        // Add action listener for signup button
+        signupButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Open Signup Frame
+                new SignupFrame().setVisible(true);
+                dispose(); // Close Login Frame after opening Signup
+            }
+        });
     }
 
     private void login() {
@@ -72,9 +97,6 @@ public class LoginFrame extends JFrame {
             JOptionPane.showMessageDialog(this, "Invalid Name", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
-    
-    
 
     public static void main(String[] args) {
         // Run login frame directly for testing
