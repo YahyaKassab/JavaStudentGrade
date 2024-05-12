@@ -24,10 +24,8 @@ public class LoginFrame extends JFrame {
         setLayout(new FlowLayout());
 
         // Add components
-        add(new JLabel("Username:"));
+        add(new JLabel("Name:"));
         add(usernameField);
-        // add(new JLabel("Password:"));
-        // add(passwordField);
         add(loginButton);
 
         // Set frame properties
@@ -54,7 +52,7 @@ public class LoginFrame extends JFrame {
             while ((line = br.readLine()) != null) {
                 // Split the line by whitespace and get the first element (the name)
                 String[] parts = line.split("\\s+");
-                String name = parts[1]; // Assuming the name is the second element
+                String name = parts[0]; // Assuming the name is the second element
     
                 // Check if the entered username matches the name
                 if (name.equals(usernameToMatch)) {
@@ -75,7 +73,7 @@ public class LoginFrame extends JFrame {
                 ex.printStackTrace(); // Handle exception
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Invalid username", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Invalid Name", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     

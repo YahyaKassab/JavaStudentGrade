@@ -180,7 +180,7 @@ setLocationRelativeTo(null);
                 BufferedWriter bwt = new BufferedWriter(fwt);
                 PrintWriter coutr = new PrintWriter(bwt);
                 coutr.append(stud_name.getText());
-                coutr.append(" "+final_+"%");
+                coutr.append(" "+final_);
                 coutr.append(" "+grade+"\n");
                 coutr.close();
                 System.out.println(stud_name.getText());

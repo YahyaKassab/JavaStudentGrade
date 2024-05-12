@@ -19,11 +19,12 @@ public class FinalYearProject {
                 // open grading panel if loading in the progress bar is over
                 if (i == 100) {
                     JOptionPane.showMessageDialog(null, "Completed. Click OK to continue.");
-
+                    
                     // Our main app is showed here when the loading is done
                     LoginFrame app = new LoginFrame();
-                    app.setVisible(true);
                     spl.setVisible(false);
+                    Thread.sleep(45);
+                    app.setVisible(true);
                     break; // Exit the loop once the login frame is shown
                 } else if (i == 45) {
                     spl.guides_add.setText("Please wait while setting things in order");
