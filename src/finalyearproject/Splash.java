@@ -5,14 +5,9 @@ public class Splash extends javax.swing.JFrame {
 
     public Splash() {
         initComponents();
-        showLoginScreen();
 
     }
- private void showLoginScreen() {
-        LoginFrame loginFrame = new LoginFrame();
-        loginFrame.setVisible(true);
-    }
-    @SuppressWarnings("unchecked")
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -25,13 +20,15 @@ public class Splash extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(186, 79, 84));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText(" STUDENT GRADING SYSTEM");
 
         loadingNum.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
+        loadingNum.setForeground(new java.awt.Color(255, 255, 255));
         loadingNum.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         loadingNum.setText("99%");
 

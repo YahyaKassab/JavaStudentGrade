@@ -21,7 +21,7 @@ public class FinalYearProject {
                     JOptionPane.showMessageDialog(null, "Completed. Click OK to continue.");
                     
                     // Our main app is showed here when the loading is done
-                    LoginFrame app = new LoginFrame();
+                    LoginPage app = new LoginPage();
                     spl.setVisible(false);
                     Thread.sleep(45);
                     app.setVisible(true);
